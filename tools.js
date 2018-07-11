@@ -87,3 +87,12 @@ function isJson(obj) {
     var isjson = typeof(obj) == "object" && Object.prototype.toString.call(obj).toLowerCase() == "[object object]" && !obj.length;
     return isjson;
 }
+// 简单数组去重
+function uniqueArray(a) {
+	a.sort();
+	var t = [a[0]];
+	for (var i = 1; i < a.length; i++) {
+		a[i] !== t[t.length - 1] && t.push(a[i]);
+	}
+	return t;
+}
